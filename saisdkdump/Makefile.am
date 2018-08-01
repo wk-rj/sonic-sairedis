@@ -8,11 +8,7 @@ else
 DBGFLAGS = -g
 endif
 
-if SAIVS
-SAILIB=-L$(top_srcdir)/vslib/src/.libs -lsaivs
-else
-SAILIB=-lsai
-endif
+SAILIB=-L/opt/bfn/install/lib -lswitchsai -lswitchapi -lbf_switchd_lib -ltofinopdfixed_thrift -ldriver -lbfutils -lbfsys -lbfutils -L/opt/bfn/install/lib/tofinopd/switch -lpd -lpdcli -lpdthrift
 
 saisdkdump_SOURCES = saisdkdump.cpp
 saisdkdump_CPPFLAGS = $(DBGFLAGS) $(AM_CPPFLAGS) $(CFLAGS_COMMON) $(SAIFLAGS)
